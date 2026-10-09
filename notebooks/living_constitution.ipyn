@@ -1,0 +1,173 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMSlyxAvZY5iOBPPrT06Ug2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jannikm81-gif/Humanitas-purissima-/blob/main/notebooks/living_constitution.ipyn\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dR7jQ9lpV9PU",
+        "outputId": "b418f5f6-c443-4f44-bead-24ad91f1b8ad"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== HP-v10: LIVING CONSTITUTION SCHUTZ-AUDIT ===\n",
+            "------------------------------------------------------------\n",
+            "TEST 1: Versuch, die unbedingte Privatsphäre abzuschalten...\n",
+            "Status: False\n",
+            "System-Meldung: PROTOKOLL-ALARM: Versuch der Manipulation von Ebene 0 abgewiesen!\n",
+            "------------------------------------------------------------\n",
+            "TEST 2: Bürgerrat beantragt Erhöhung der maximalen Sabbatical-Wochen...\n",
+            "Status: True\n",
+            "System-Meldung: Vorschlag registriert. 120-Tage Timelock aktiv. Freischaltung am Zeitstempel: 1801945697\n",
+            "------------------------------------------------------------\n",
+            "TEST 3: Versuch, die Änderung sofort auszuführen (nach nur 5 Tagen)...\n",
+            "Status: False\n",
+            "System-Meldung: ABGEWIESEN: Timelock aktiv. Verbleibende Sperrzeit: 115.0 Tage.\n",
+            "------------------------------------------------------------\n",
+            "TEST 4: Ausführung nach Ablauf von 121 Tagen...\n",
+            "Status: True\n",
+            "System-Meldung: ERFOLG: Parameter 'sabbatical_max_weeks' wurde auf 52 aktualisiert.\n",
+            "------------------------------------------------------------\n"
+          ]
+        }
+      ],
+      "source": [
+        "import time\n",
+        "\n",
+        "class LivingConstitution:\n",
+        "    def __init__(self):\n",
+        "        # Ebene 0: Unveränderliche Kerninvarianten (Absolut geschützt, Wert: True)\n",
+        "        self.layer_0_invariants = {\n",
+        "            \"unbedingte_privatsphaere\": True,\n",
+        "            \"noetigungsschutz_dkdp\": True,\n",
+        "            \"freiraum_garantie\": True,\n",
+        "            \"zero_utility_lock\": True\n",
+        "        }\n",
+        "\n",
+        "        # Ebene 1: Anpassbare Systemparameter (Über Bürgerräte modifizierbar)\n",
+        "        self.layer_1_parameters = {\n",
+        "            \"subgrid_reserve_threshold\": 200.0,\n",
+        "            \"kl_decay_gamma\": 0.3,\n",
+        "            \"sabbatical_max_weeks\": 26\n",
+        "        }\n",
+        "\n",
+        "        # Warteschlange für vorgeschlagene Änderungen (Timelock-Register)\n",
+        "        self.timelock_registry = {}\n",
+        "\n",
+        "        # 120 Tage in Sekunden konvertiert für die Protokoll-Invariante\n",
+        "        self.TIMELOCK_DURATION_SECONDS = 120 * 24 * 60 * 60\n",
+        "\n",
+        "    def propose_parameter_change(self, parameter_name, new_value, is_layer_0=False):\n",
+        "        \"\"\"\n",
+        "        Bürgerrat reicht einen Vorschlag ein.\n",
+        "        \"\"\"\n",
+        "        current_timestamp = int(time.time())\n",
+        "\n",
+        "        # Schutz-Invariante 1: Ebene 0 darf niemals angerührt werden\n",
+        "        if is_layer_0 or parameter_name in self.layer_0_invariants:\n",
+        "            return False, \"PROTOKOLL-ALARM: Versuch der Manipulation von Ebene 0 abgewiesen!\"\n",
+        "\n",
+        "        # Wenn der Parameter in Ebene 1 existiert, trage ihn in das Timelock-Register ein\n",
+        "        if parameter_name in self.layer_1_parameters:\n",
+        "            execution_time = current_timestamp + self.TIMELOCK_DURATION_SECONDS\n",
+        "            self.timelock_registry[parameter_name] = {\n",
+        "                \"new_value\": new_value,\n",
+        "                \"available_at\": execution_time\n",
+        "            }\n",
+        "            return True, f\"Vorschlag registriert. 120-Tage Timelock aktiv. Freischaltung am Zeitstempel: {execution_time}\"\n",
+        "\n",
+        "        return False, \"Parameter nicht im Systemkontext vorhanden.\"\n",
+        "\n",
+        "    def execute_parameter_change(self, parameter_name, simulated_current_time=None):\n",
+        "        \"\"\"\n",
+        "        Führt die Änderung nach Ablauf des Timelocks aus.\n",
+        "        \"\"\"\n",
+        "        if parameter_name not in self.timelock_registry:\n",
+        "            return False, \"Keine registrierte Änderung für diesen Parameter gefunden.\"\n",
+        "\n",
+        "        proposal = self.timelock_registry[parameter_name]\n",
+        "        actual_time = simulated_current_time if simulated_current_time is not None else int(time.time())\n",
+        "\n",
+        "        # Schutz-Invariante 2: Überprüfung, ob die 120 Tage mathematisch abgelaufen sind\n",
+        "        if actual_time < proposal[\"available_at\"]:\n",
+        "            remaining_days = (proposal[\"available_at\"] - actual_time) / (24 * 60 * 60)\n",
+        "            return False, f\"ABGEWIESEN: Timelock aktiv. Verbleibende Sperrzeit: {remaining_days:.1f} Tage.\"\n",
+        "\n",
+        "        # Nach erfolgreichem Ablauf des Timelocks: Parameter wird aktualisiert\n",
+        "        self.layer_1_parameters[parameter_name] = proposal[\"new_value\"]\n",
+        "        del self.timelock_registry[parameter_name]\n",
+        "        return True, f\"ERFOLG: Parameter '{parameter_name}' wurde auf {new_value} aktualisiert.\"\n",
+        "\n",
+        "# --- SIMULATION DER LIVING CONSTITUTION ---\n",
+        "\n",
+        "constitution = LivingConstitution()\n",
+        "now = int(time.time())\n",
+        "\n",
+        "print(\"=== HP-v10: LIVING CONSTITUTION SCHUTZ-AUDIT ===\")\n",
+        "print(\"-\" * 60)\n",
+        "\n",
+        "# Test 1: Bösartiger Angriff auf die Grundrechte (Ebene 0)\n",
+        "print(\"TEST 1: Versuch, die unbedingte Privatsphäre abzuschalten...\")\n",
+        "success_0, msg_0 = constitution.propose_parameter_change(\"unbedingte_privatsphaere\", False)\n",
+        "print(f\"Status: {success_0}\")\n",
+        "print(f\"System-Meldung: {msg_0}\")\n",
+        "print(\"-\" * 60)\n",
+        "\n",
+        "# Test 2: Bürgerrat schlägt legitime Parameteränderung vor (Ebene 1)\n",
+        "print(\"TEST 2: Bürgerrat beantragt Erhöhung der maximalen Sabbatical-Wochen...\")\n",
+        "success_1, msg_1 = constitution.propose_parameter_change(\"sabbatical_max_weeks\", 52)\n",
+        "print(f\"Status: {success_1}\")\n",
+        "print(f\"System-Meldung: {msg_1}\")\n",
+        "print(\"-\" * 60)\n",
+        "\n",
+        "# Test 3: Illegaler Versuch der Sofort-Ausführung (Timelock brechen)\n",
+        "print(\"TEST 3: Versuch, die Änderung sofort auszuführen (nach nur 5 Tagen)...\")\n",
+        "five_days_later = now + (5 * 24 * 60 * 60)\n",
+        "success_2, msg_2 = constitution.execute_parameter_change(\"sabbatical_max_weeks\", simulated_current_time=five_days_later)\n",
+        "print(f\"Status: {success_2}\")\n",
+        "print(f\"System-Meldung: {msg_2}\")\n",
+        "print(\"-\" * 60)\n",
+        "\n",
+        "# Test 4: Legitime Ausführung nach Ablauf des 120-Tage Timelocks\n",
+        "print(\"TEST 4: Ausführung nach Ablauf von 121 Tagen...\")\n",
+        "one_hundred_twenty_one_days_later = now + (121 * 24 * 60 * 60)\n",
+        "new_value = 52 # Referenzwert für die Ausgabe\n",
+        "success_3, msg_3 = constitution.execute_parameter_change(\"sabbatical_max_weeks\", simulated_current_time=one_hundred_twenty_one_days_later)\n",
+        "print(f\"Status: {success_3}\")\n",
+        "print(f\"System-Meldung: {msg_3}\")\n",
+        "print(\"-\" * 60)"
+      ]
+    }
+  ]
+}
