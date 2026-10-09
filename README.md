@@ -95,12 +95,14 @@ Aus Kenntnis von $K_{\text{Duress}}$ lässt sich die Existenz von $K_{\text{Real
 
 ---
 
-## 🧪 4. Prototypen & Simulationen
+🧪 4. Prototypen & Simulationen
+Im Ordner `/notebooks` und `/src` finden sich Python-Skripte und Jupyter/Colab-Notebooks zur Verifizierung der mathematischen Invarianten:
 
-Im Ordner `/notebooks` finden sich Python-Skripte und Jupyter/Colab-Notebooks zur Verifizierung der mathematischen Invarianten:
+* **[Nötigungsschutz-Prototyp (Python)](./src)**: Funktionsfähige Referenzimplementierung des DKDP-Nötigungsschutzes in `src/dkdp_prototype.py`.
+* **[Orakel-Simulation (Notebooks)](./notebooks)**: Monte-Carlo-Simulation zur Kartell-Isolierung via KL-Divergenz in `notebooks/oracle_kl_simulation.ipynb`.
 
-* `dkdp_prototype.py`: Funktionsfähige Python-Referenzimplementierung des Nötigungsschutzes.
-* `oracle_kl_simulation.ipynb`: Monte-Carlo-Simulation zur Kartell-Isolierung via KL-Divergenz.
+
+
 
 ---
 
