@@ -95,11 +95,17 @@ Aus Kenntnis von $K_{\text{Duress}}$ lässt sich die Existenz von $K_{\text{Real
 
 ---
 
-🧪 4. Prototypen & Simulationen
-Im Ordner `/notebooks` und `/src` finden sich Python-Skripte und Jupyter/Colab-Notebooks zur Verifizierung der mathematischen Invarianten:
+## 🧪 4. Prototypen & Simulationen
 
-* **[Nötigungsschutz-Prototyp (Python)](./src)**: Funktionsfähige Referenzimplementierung des DKDP-Nötigungsschutzes in `src/dkdp_prototype.py`.
-* **[Orakel-Simulation (Notebooks)](./notebooks)**: Monte-Carlo-Simulation zur Kartell-Isolierung via KL-Divergenz in `notebooks/oracle_kl_simulation.ipynb`.
+Im Ordner `/notebooks` finden sich die mathematischen und kryptografischen Validierungen der Kerninvarianten, die direkt via Google Colab ausgeführt werden können:
+
+* **Orakel-Resilienz & Sybil-Schutz (`oracle_sybil_simulation.ipynb`)**: Verifiziert die Isolierung eines koordinierten 60%-Sybil-Kartells mittels Pairwise Bounding und informationstheoretischem Divergenz-Decay.
+* **Nötigungsschutz & Plausible Deniability (`dkdp_verification.ipynb`)**: Beweist die mathematische Orthogonalität und maximale Shannon-Entropie der dual abgeleiteten Schlüssel unter physischem Zwang.
+* **Zero-Utility Lock (`ztil_simulation.ipynb`)**: Simuliert die sofortige, automatische Hardware-Entwertung besetzter Knoten bei gleichzeitiger Aufrechterhaltung der verbleibenden Sub-Grid-Integrität.
+* **Trojanischer Wohlstandsgradient (`wealth_gradient.ipynb`)**: Berechnet das reale Ressourcen-Wachstum (\(I_{BPW}\)) über das geometrische Mittel von Ökologie, Infrastruktur und Kultur, entkoppelt von spekulativer Zins-Inflation.
+* **Exil- & Dissidenten-Ventil (`exil_ventil.ipynb`)**: Validiert den fälschungssicheren, asymmetrischen Transfer von Offline-Vouchern via Ed25519 ohne jegliche Internet- oder Datenbankverbindung.
+* **Living Constitution (`living_constitution.ipynb`)**: Demonstriert die Unantastbarkeit der Ebene-0-Invarianten sowie die unerbittliche Einhaltung des kryptografischen 120-Tage Timelocks für Parameter-Evolutionen.
+
 
 
 
