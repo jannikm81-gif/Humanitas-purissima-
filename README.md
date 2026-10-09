@@ -1,4 +1,6 @@
 # Humanitas Purissima
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jannikm81-gif/Humanitas-purissima-/blob/main/notebooks/oracle_kl_simulation.ipynb)
+
 
 > **Systemarchitektur:** Dezentrales Resilienz-, Autonomie- & Stabilitätsprotokoll  
 > **Spezifikation:** Edition 10.0  
