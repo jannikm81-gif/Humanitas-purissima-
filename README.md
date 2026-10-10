@@ -72,10 +72,6 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 *   **Strukturelle Kulanzfenster** zur Vermeidung algorithmischer Härte bei Erstverstößen.
 
 
-w_i(t+1) = w_i(t) \cdot \exp\left(-\gamma \cdot D_{\text{KL}}\left(P_{\text{Sensor}} \parallel P_{\text{Kontext}}\right)\right)$$
-* Integration des Poethischen Orakels zur Messung kultureller Resonanz ($I_{\text{Kult}}$).
-* Strukturelle Kulanzfenster zur Vermeidung algorithmischer Härte bei Erstverstößen.
-
 ### Artikel III: Sub-Grid-Autarkie & Zero-Utility Lock (ZTIL)
 * Automatische ökonomische Isolation bei nachgewiesener physischer Aggression.
 * Dynamic Network Partitioning: Nahtlose Abspaltung lokaler Sub-Grids bei Netzwerktrennung.
