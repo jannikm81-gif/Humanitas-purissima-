@@ -23,6 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Pfad-Isolation brechen (Inhalte flach zusammenlegen)
+      run: |
+        cp -r src/* tests/
+
     - name: Mathematische Invarianten-Suite ausfuehren
       run: |
         python -m unittest discover -s tests -p 'test_*.py'
