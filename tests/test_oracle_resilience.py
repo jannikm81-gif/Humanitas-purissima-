@@ -3,7 +3,7 @@ import os
 import unittest
 import numpy as np
 
-# Inpliziter Pfad-Fix: Holt den src-Ordner direkt in das Suchverzeichnis
+# Holt das Hauptverzeichnis direkt in das Suchverzeichnis
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.oracle_resilience import PairwiseBoundedOracle
