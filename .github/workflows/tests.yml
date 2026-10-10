@@ -22,10 +22,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -e .
 
     - name: Mathematische Invarianten-Suite ausfuehren
-      env:
-        PYTHONPATH: .
       run: |
         python -m unittest tests/test_oracle_resilience.py
         python -m unittest tests/test_dkdp_crypto.py
@@ -33,3 +32,4 @@ jobs:
         python -m unittest tests/test_exil_system.py
         python -m unittest tests/test_constitution.py
         python -m unittest tests/test_freiraum.py
+
