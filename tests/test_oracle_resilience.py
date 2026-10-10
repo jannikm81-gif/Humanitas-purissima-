@@ -33,6 +33,6 @@ for i in range(4):
 for j in range(4, 10):
 self.assertTrue(updated_weights[i] > updated_weights[j])
 
-if name == 'main':
+if __name__ == '__main__':
 unittest.main()
 
