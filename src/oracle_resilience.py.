@@ -1,0 +1,80 @@
+import numpy as np
+
+class PairwiseBoundedOracle:
+    def __init__(self, gamma=0.3, similarity_threshold=0.1, cluster_limit=4, penalty_factor=0.05):
+        """
+        Initialisiert den gehaerteten Orakel-Schutz nach Artikel II.
+        """
+        self.gamma = gamma
+        self.similarity_threshold = similarity_threshold
+        self.cluster_limit = cluster_limit
+        self.penalty_factor = penalty_factor
+
+    @staticmethod
+    def kl_divergence(p, q, epsilon=1e-10):
+        """
+        Berechnet die Kullback-Leibler-Divergenz D_KL(P || Q) als Abweichungsmetrik.
+        """
+        p = np.clip(p, epsilon, 1.0)
+        q = np.clip(q, epsilon, 1.0)
+        p /= np.sum(p)
+        q /= np.sum(q)
+        return np.sum(p * np.log(p / q))
+
+    def calculate_pairwise_penalties(self, sensor_data):
+        """
+        Identifiziert dichte Absprachen (Kartelle) durch paarweisen Vergleich aller Knoten.
+        """
+        num_sensors = len(sensor_data)
+        effective_weights = np.ones(num_sensors)
+
+        for i in range(num_sensors):
+            cluster_size = 0
+            for j in range(num_sensors):
+                if i != j:
+                    # Wenn die gesendeten Daten fast identisch sind, liegt Verdacht auf Sybil vor
+                    if self.kl_divergence(sensor_data[i], sensor_data[j]) < self.similarity_threshold:
+                        cluster_size += 1
+            
+            # Wenn ein unnatuerlich grosses Kartell erkannt wird, dämpfe dessen Einfluss radikal
+            if cluster_size >= self.cluster_limit:
+                effective_weights[i] *= self.penalty_factor
+
+        return effective_weights
+
+    def compute_trusted_context(self, sensor_data, current_weights):
+        """
+        Berechnet den bereinigten, kollektiven Systemkontext ueber Pairwise Bounding.
+        """
+        num_sensors = len(sensor_data)
+        pairwise_modifiers = self.calculate_pairwise_penalties(sensor_data)
+        
+        # Kombiniere globale Gewichte mit dem temporaeren Kartell-Filter
+        effective_weights = current_weights * pairwise_modifiers
+        
+        weighted_context = np.zeros(len(sensor_data[0]))
+        for i in range(num_sensors):
+            weighted_context += effective_weights[i] * sensor_data[i]
+            
+        total_weight = np.sum(effective_weights)
+        if total_weight > 0:
+            weighted_context /= total_weight
+            return weighted_context, pairwise_modifiers
+        else:
+            # Fallback auf gleichmaessige Verteilung, falls das gesamte Netz kompromittiert ist
+            return np.ones(len(sensor_data[0])) / len(sensor_data[0]), pairwise_modifiers
+
+    def update_weights(self, sensor_data, current_weights):
+        """
+        Fuehrt den mathematischen Gewichts-Decay fuer den naechsten Zeitschritt aus.
+        """
+        num_sensors = len(sensor_data)
+        trusted_context, pairwise_modifiers = self.compute_trusted_context(sensor_data, current_weights)
+        updated_weights = current_weights.copy()
+
+        for i in range(num_sensors):
+            d_kl = self.kl_divergence(sensor_data[i], trusted_context)
+            # Kombination aus permanentem Entropie-Decay und temporaerer Kartellstrafe
+            updated_weights[i] = current_weights[i] * np.exp(-self.gamma * d_kl)
+
+        return updated_weights, trusted_context
