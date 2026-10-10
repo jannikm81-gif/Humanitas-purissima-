@@ -75,6 +75,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 
 
 ### Artikel III: Sub-Grid-Autarkie & Zero-Utility Lock (ZTIL)
+📊 **[Live-ZTIL-Graphen im Jupyter-Notebook anzeigen](notebooks/ztil_network_simulation.ipynb)**
+
 * Automatische ökonomische Isolation bei nachgewiesener physischer Aggression.
 * Dynamic Network Partitioning: Nahtlose Abspaltung lokaler Sub-Grids bei Netzwerktrennung.
 
