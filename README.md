@@ -83,6 +83,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Dynamic Network Partitioning: Nahtlose Abspaltung lokaler Sub-Grids bei Netzwerktrennung.
 
 ### Artikel IV: Digitale Souveränität & DKDP-Nötigungsschutz
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/dkdp_verification.ipynb)**
+
 * Self-Sovereign Identity (SSI) & Proof-of-Personhood ohne zentrale Biometrie-Datenbank.
 * Dual-Key Derivationsprotokoll (DKDP) für plausible Abstreitbarkeit bei physischer Erpressung.
 * Das Freiraum-Protokoll (Recht auf Sabbatical / Auszeit ohne Verlust der Grundversorgung).
