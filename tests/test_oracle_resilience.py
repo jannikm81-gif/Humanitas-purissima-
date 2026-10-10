@@ -1,12 +1,8 @@
-import sys
-import os
 import unittest
 import numpy as np
 
-# Holt das Hauptverzeichnis direkt in das Suchverzeichnis
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from src.oracle_resilience import PairwiseBoundedOracle
+# Invariante: Importiert direkt aus dem lokalen Testverzeichnis ohne src-Praefix
+from oracle_resilience import PairwiseBoundedOracle
 
 class TestPairwiseBoundedOracle(unittest.TestCase):
     def setUp(self):
