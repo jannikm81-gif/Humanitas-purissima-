@@ -58,6 +58,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 ## 🏛 2. Protokoll-Architektur (Übersicht der Artikel)
 
 ### Artikel I: Genesis-Nullpunkt & Hardware-Degradation
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/wealth_gradient_simulation.ipynb)**
+
 * Formale Verifikation des Kerncodes (Lean/Coq) ohne Admin-Schlüssel.
 * Multi-Tier Hardware Execution (Tier 0 bis Tier 2 Fallback auf Standard-8-Bit Microcontrollern).
 * Der Trojanische Wohlstandsgradient zur zinslosen, dezentralen Wertschöpfung ($I_{\text{BPW}}$).
