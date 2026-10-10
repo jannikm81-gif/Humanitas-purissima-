@@ -27,3 +27,7 @@ jobs:
     - name: Mathematische Invarianten-Suite ausfuehren
       run: |
         python -m unittest discover -s tests -t . -p 'test_*.py'
+
+    - name: Orakel-Resilienz Direktpruefung
+      run: |
+        python src/oracle_resilience.py
