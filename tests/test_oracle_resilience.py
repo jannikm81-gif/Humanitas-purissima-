@@ -2,7 +2,8 @@ import unittest
 import numpy as np
 
 # Invariante: Importiert direkt aus dem lokalen Testverzeichnis ohne src-Praefix
-from oracle_resilience import PairwiseBoundedOracle
+from src.oracle_resilience import PairwiseBoundedOracle
+
 
 class TestPairwiseBoundedOracle(unittest.TestCase):
     def setUp(self):
