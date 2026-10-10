@@ -26,5 +26,3 @@ jobs:
     - name: Mathematische Invarianten-Suite ausfuehren
       run: |
         python -m unittest discover -s tests -p 'test_*.py'
-      env:
-        PYTHONPATH: ${{ github.workspace }}
