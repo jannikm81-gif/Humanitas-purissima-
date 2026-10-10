@@ -24,5 +24,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Mathematische Invarianten-Suite ausfuehren
+      env:
+        PYTHONPATH: ${{ github.workspace }}
       run: |
         python -m unittest discover -s tests -p 'test_*.py'
