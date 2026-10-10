@@ -65,6 +65,14 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 ### Artikel II: Adversarieller Spatio-Temporaler Orakel-Schutz
 * Dynamischer Gewichtungs-Decay für Sensorknoten:
   $$w_i(t+1) = w_i(t) \cdot \exp\left(-\gamma \cdot D_{\text{KL}}\left(P_{\text{Sensor}} \parallel P_{\text{Kontext}}\right)\right)$$
+
+![Orakel Resilienz gegen Sybil-Angriffe](oracle_sybil_resilience.png)
+
+*   **Integration des Poethischen Orakels** zur Messung kultureller Resonanz ($I_{\text{Kult}}$).
+*   **Strukturelle Kulanzfenster** zur Vermeidung algorithmischer Härte bei Erstverstößen.
+
+
+w_i(t+1) = w_i(t) \cdot \exp\left(-\gamma \cdot D_{\text{KL}}\left(P_{\text{Sensor}} \parallel P_{\text{Kontext}}\right)\right)$$
 * Integration des Poethischen Orakels zur Messung kultureller Resonanz ($I_{\text{Kult}}$).
 * Strukturelle Kulanzfenster zur Vermeidung algorithmischer Härte bei Erstverstößen.
 
