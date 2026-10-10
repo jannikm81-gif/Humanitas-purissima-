@@ -98,7 +98,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Offline-Voucher für reibungslose Fluchthilfe ohne aktive Internetverbindung.
 
 ### Artikel VI: Der Gehärtete Kern & Living Constitution
-📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/living_constitution.ipynb)**
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](https://google.com)**
+
 
 
 
