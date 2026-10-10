@@ -66,7 +66,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Dynamischer Gewichtungs-Decay für Sensorknoten:
   $$w_i(t+1) = w_i(t) \cdot \exp\left(-\gamma \cdot D_{\text{KL}}\left(P_{\text{Sensor}} \parallel P_{\text{Kontext}}\right)\right)$$
 
-![Orakel Resilienz gegen Sybil-Angriffe](oracle_sybil_resilience.png)
+📊 **[Live-Simulationsergebnis im Jupyter-Notebook anzeigen](notebooks/oracle_sybil_simulation.ipynb)**
+
 
 *   **Integration des Poethischen Orakels** zur Messung kultureller Resonanz ($I_{\text{Kult}}$).
 *   **Strukturelle Kulanzfenster** zur Vermeidung algorithmischer Härte bei Erstverstößen.
