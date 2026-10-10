@@ -21,12 +21,10 @@ jobs:
     - name: Abhaengigkeiten installieren
       run: |
         python -m pip install --upgrade pip
+        python -m pip install pytest numpy scipy
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Pfad-Isolation brechen (Inhalte flach zusammenlegen)
+    - name: Mathematische Invarianten-Suite via Pytest ausfuehren
       run: |
-        cp -r src/* tests/
+        pytest
 
-    - name: Mathematische Invarianten-Suite ausfuehren
-      run: |
-        python -m unittest discover -s tests -p 'test_*.py'
