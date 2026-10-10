@@ -1,4 +1,5 @@
-![Build Status](https://github.com)
+![](../../actions/workflows/tests.yml/badge.svg)
+
 
 
 
