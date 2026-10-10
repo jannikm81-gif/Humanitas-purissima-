@@ -98,9 +98,13 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Offline-Voucher für reibungslose Fluchthilfe ohne aktive Internetverbindung.
 
 ### Artikel VI: Der Gehärtete Kern & Living Constitution
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/living_constitution.ipynb)**
+
 * Zweistufige Hierarchie: **Ebene 0** (Unmanipulierbare Grundrechte & Invarianten) vs. **Ebene 1** (Parameter-Anpassungen via Bürgerräte und 120-Tage Timelock).
 
 ### Artikel VII: Planetares Ressourcen-Modell ($I_{\text{BPW}}$)
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/wealth_gradient_simulation.ipynb)**
+
 * Sachwertgedeckte Verrechnungseinheiten für Energie, Wasser und Wohnraum.
 * Messung des echten Wohlstands über $I_{\text{Bio}}$, $I_{\text{Infrastrukt}}$ und $I_{\text{Kult}}$.
 
