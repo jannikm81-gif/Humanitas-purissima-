@@ -1,9 +1,12 @@
+import sys
+import os
 import unittest
 import numpy as np
 
-# Invariante: Importiert direkt aus dem lokalen Testverzeichnis ohne src-Praefix
-from src.oracle_resilience import PairwiseBoundedOracle
+# Absolute Pfad-Erzwingung für den Linux-Server
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from src.oracle_resilience import PairwiseBoundedOracle
 
 class TestPairwiseBoundedOracle(unittest.TestCase):
     def setUp(self):
@@ -14,19 +17,14 @@ class TestPairwiseBoundedOracle(unittest.TestCase):
     def test_sybil_cartel_isolation(self):
         weights = np.ones(10)
         sensor_data = {}
-
         for i in range(4):
             sensor_data[i] = self.true_context.copy()
-
         for i in range(4, 10):
             sensor_data[i] = self.sybil_context.copy()
-
         updated_weights, trusted_context = self.oracle.update_weights(sensor_data, weights)
-
         dist_to_true = np.sum(np.abs(trusted_context - self.true_context))
         dist_to_sybil = np.sum(np.abs(trusted_context - self.sybil_context))
         self.assertTrue(dist_to_true < dist_to_sybil)
-
         for i in range(4):
             for j in range(4, 10):
                 self.assertTrue(updated_weights[i] > updated_weights[j])
