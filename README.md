@@ -66,7 +66,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Dynamischer Gewichtungs-Decay für Sensorknoten:
   $$w_i(t+1) = w_i(t) \cdot \exp\left(-\gamma \cdot D_{\text{KL}}\left(P_{\text{Sensor}} \parallel P_{\text{Kontext}}\right)\right)$$
 
-📊 **[Live-Simulationsergebnis im Jupyter-Notebook anzeigen](notebooks/oracle_sybil_simulation.ipynb)**
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/ztil_simulation.ipynb)**
+
 
 
 
