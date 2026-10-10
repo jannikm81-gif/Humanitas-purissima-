@@ -69,6 +69,7 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 📊 **[Live-Simulationsergebnis im Jupyter-Notebook anzeigen](notebooks/oracle_sybil_simulation.ipynb)**
 
 
+
 *   **Integration des Poethischen Orakels** zur Messung kultureller Resonanz ($I_{\text{Kult}}$).
 *   **Strukturelle Kulanzfenster** zur Vermeidung algorithmischer Härte bei Erstverstößen.
 
