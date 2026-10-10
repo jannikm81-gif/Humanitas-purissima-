@@ -90,6 +90,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Das Freiraum-Protokoll (Recht auf Sabbatical / Auszeit ohne Verlust der Grundversorgung).
 
 ### Artikel V: Exil- & Dissidenten-Ventil
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/exile_valve_verification.ipynb)**
+
 * Recht auf friedliche Sezession und individuellen Exit aus lokalen Sub-Grids.
 * Offline-Voucher für reibungslose Fluchthilfe ohne aktive Internetverbindung.
 
