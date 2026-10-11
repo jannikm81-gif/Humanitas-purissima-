@@ -33,7 +33,7 @@ Wird ein Nutzer zur Preisgabe seines Schlüssels gezwungen, extrahiert der Angre
 ## 5. Fälschungssicheres Exil-Ventil via Ed25519 (Artikel V)
 Der asymmetrische Zustandstransfer im Offline- oder Exilmodus wird über kryptografische Signaturen auf Basis der Edwards-Kurve *Ed25519* gesichert. Die Validierungs-Invariante fordert:
 
-$$\text{Verify}(A, M, \Sigma) = \text{True} \quad \forall M \in \text{Exile\_Payload}$$
+$$ I_{\text{BPW}} = \int_{0}^{T} \left( \prod_{f=1}^{F} R_f(t) \right) dt - \sum_{n=1}^{N} \text{UtilityLoss}(n) $$
 
 Ein Transfer ohne gültigen, fälschungssicheren kryptografischen Beweis ist mathematisch unmöglich; eine staatliche Re-Allokation von Vermögenswerten im Exilraum wird dadurch a priori neutralisiert.
 
@@ -49,6 +49,6 @@ $$\text{If } |V_n| \geq 500 \implies \mathcal{T}(parameter) = \emptyset$$
 ## 7. Planetarisches Ressourcen-Modell & Wohlstandsgradient (Artikel VII)
 Die Allokation planetarer Ressourcen erfolgt über die Invariante des biologisch-physischen Wohlstandsgradienten ($I_{BPW}$). Das System reguliert Ungleichgewichte dynamisch über ein geschlossenes Kreislaufmodell, das die Akkumulationsrate mathematisch deckelt:
 
-$$I_{BPW} = \int_{0}^{T} \left( \prod_{f=1}^{F} R_f(t) \right) dt - \sum_{n=1}^{N} \text{Utility\_Loss}(n)$$
+$$ I_{\text{BPW}} = \int_{0}^{T} \left( \prod_{f=1}^{F} R_f(t) \right) dt - \sum_{n=1}^{N} \text{UtilityLoss}(n) $$
 
 Das System konvergiert stabil gegen ein thermodynamisches Fließgleichgewicht, welches die Ausbeutung planetarer Ressourcen systemseitig unmöglich macht.
