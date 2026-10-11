@@ -15,6 +15,7 @@
 > **Status:** Open-Source Forschungsspezifikation & Manifest  
 > **Lizenz:** AGPL-3.0 / CC-BY-SA 4.0
 > **Formale Dokumentation:**
+>
 > [WHITE_PAPER.md](WHITE_PAPER.md)
 
 
