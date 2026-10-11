@@ -6,8 +6,6 @@
 
 
 # Humanitas Purissima
-![Build Status](https://shields.io)
-
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jannikm81-gif/Humanitas-purissima-/blob/main/notebooks/oracle_kl_simulation.ipynb)
 
