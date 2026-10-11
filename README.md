@@ -101,6 +101,7 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 📊 **[Live-Simulation im Jupyter-Notebook anzeigen](https://google.com)**
 
 
+
 * Zweistufige Hierarchie: **Ebene 0** (Unmanipulierbare Grundrechte & Invarianten) vs. **Ebene 1** (Parameter-Anpassungen via Bürgerräte und 120-Tage Timelock).
 
 ### Artikel VII: Planetares Ressourcen-Modell ($I_{\text{BPW}}$)
