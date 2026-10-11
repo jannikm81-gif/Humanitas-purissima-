@@ -33,7 +33,7 @@ Wird ein Nutzer zur Preisgabe seines Schlüssels gezwungen, extrahiert der Angre
 ## 5. Fälschungssicheres Exil-Ventil via Ed25519 (Artikel V)
 Der asymmetrische Zustandstransfer im Offline- oder Exilmodus wird über kryptografische Signaturen auf Basis der Edwards-Kurve *Ed25519* gesichert. Die Validierungs-Invariante fordert:
 
-$$ I_{\text{BPW}} = \int_{0}^{T} \left( \prod_{f=1}^{F} R_f(t) \right) dt - \sum_{n=1}^{N} \text{UtilityLoss}(n) $$
+$$ \text{Verify}(A, M, \Sigma) = \text{True} \quad \forall M \in \text{ExilePayload} $$
 
 Ein Transfer ohne gültigen, fälschungssicheren kryptografischen Beweis ist mathematisch unmöglich; eine staatliche Re-Allokation von Vermögenswerten im Exilraum wird dadurch a priori neutralisiert.
 
