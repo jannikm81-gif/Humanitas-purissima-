@@ -98,7 +98,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 * Offline-Voucher für reibungslose Fluchthilfe ohne aktive Internetverbindung.
 
 ### Artikel VI: Der Gehärtete Kern & Living Constitution
-[![Open In Colab](https://google.com)](https://google.com)
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/living_constitution.ipynb)**
+
 
 *   **Zweistufige Hierarchie:** Ebene 0 (Unmanipulierbare Grundrechte & Invarianten) vs. Ebene 1 (Parameter-Anpassungen via Bürgerräte und 120-Tage Timelock).
 
