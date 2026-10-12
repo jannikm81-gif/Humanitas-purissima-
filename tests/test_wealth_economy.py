@@ -1,6 +1,12 @@
 import numpy as np
 import unittest
-# Importiert die echte Produktivklasse aus deinem src-Ordner
+import os
+import sys
+
+# Zwingt Python, das Hauptverzeichnis des Repositories für Imports zu durchsuchen
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Importiert jetzt absolut sicher die echte Produktivklasse aus deinem src-Ordner
 from src.wealth_economy import WealthEconomyController
 
 class TestWealthEconomy(unittest.TestCase):
