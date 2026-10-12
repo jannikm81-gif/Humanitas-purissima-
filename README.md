@@ -114,7 +114,8 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 *   **Zweistufige Hierarchie:** Ebene 0 (Unmanipulierbare Grundrechte & Invarianten) vs. Ebene 1 (Parameter-Anpassungen via Bürgerräte und 120-Tage Timelock).
 
 ### Artikel VII: Planetares Ressourcen-Modell ($I_{\text{BPW}}$)
-📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/wealth_gradient_simulation.ipynb)**
+📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/wealth_gradient_and_nash_simulation.ipynb)**
+
 
 
 * Sachwertgedeckte Verrechnungseinheiten für Energie, Wasser und Wohnraum.
