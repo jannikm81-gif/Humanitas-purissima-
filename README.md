@@ -6,6 +6,7 @@
 
 
 # Humanitas Purissima
+> 🤖 **Note:** This project is a structural and mathematical concept experiment, developed with the assistance of advanced AI models to explore game-theoretic invariants and deployed via mobile CI/CD workflows.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jannikm81-gif/Humanitas-purissima-/blob/main/notebooks/oracle_kl_simulation.ipynb)
 
