@@ -87,12 +87,7 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 
 
 ### Artikel III: Sub-Grid-Autarkie & Zero-Utility Lock (ZTIL)
-<a href="https://google.com" target="_blank"><img src="https://google.com" alt="Open In Colab"/></a>
-
-🔗 [Interaktives Jupyter-Notebook: ZTIL Realitäts-Stresstest öffnen](notebooks/ZTIL_Stresstest_Labor.ipynb)
-
-
-
+[📊 Live-Simulation im Jupyter-Notebook anzeigen](notebooks/ZTIL_Stresstest_Labor.ipynb)
 
 
 * Automatische ökonomische Isolation bei nachgewiesener physischer Aggression.
