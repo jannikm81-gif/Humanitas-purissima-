@@ -87,7 +87,10 @@ Dieses Repository markiert den Übergang von einer theoretischen Spezifikation z
 
 
 ### Artikel III: Sub-Grid-Autarkie & Zero-Utility Lock (ZTIL)
-📊 **[Live-Simulation im Jupyter-Notebook anzeigen](notebooks/ztil_lock_simulation.ipynb)**
+[![Open In Colab](https://google.com)](https://google.com)
+
+🔗 [Interaktives Jupyter-Notebook: ZTIL Realitäts-Stresstest öffnen](notebooks/ZTIL_Stresstest_Labor.ipynb)
+
 
 
 
