@@ -36,6 +36,7 @@ class TestZTILNetworkIntegration(unittest.TestCase):
         time.sleep(0.2)
         
         self.assertEqual(len(self.node_b.received_messages), 1)
+        # HIER WAR DER FEHLER: Greift jetzt korrekt auf das erste Element der Liste zu
         self.assertEqual(self.node_b.received_messages[0]["payload"], "Hallo Welt")
 
     def test_ztil_isolation_bei_angriff(self):
